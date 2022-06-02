@@ -34,9 +34,16 @@ function App() {
       }
     } else {
       if (checkOperatorPrev(val, input)) {
-        setInput(input + val);
+        if (val == '.') {
+          if (input.indexOf('.') == -1) {
+            setInput(input + val);
+          }
+        } else {
+          setInput(input + val);
+        }
       }
     }
+    console.log(input.indexOf('.'));
   };
   
   const calcularResultado = () => {
